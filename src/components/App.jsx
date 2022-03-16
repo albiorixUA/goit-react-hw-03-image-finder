@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
-import api from 'servises/api';
 
 export default class App extends Component {
   state = {

@@ -27,23 +27,24 @@ export default class ImageGallery extends Component {
     }
   }
 
+  loadMore = () => {
+    this.setState(({ page }) => ({
+      page: page + 1,
+    }));
+    this.loadPicture();
+  };
+
   loadPicture = () => {
     this.setState({ status: Status.LOADING });
     api
       .fetchPicture(this.props.pictureName, this.state.page)
       .then(res => {
-        this.setState({
-          pictureData: res.data.hits,
+        this.setState(({ pictureData }) => ({
+          pictureData: [...pictureData, ...res.data.hits],
           status: Status.LOADED,
-        });
+        }));
       })
       .catch(error => console.log(error));
-  };
-
-  loadMore = () => {
-    this.setState(prevState => ({
-      page: prevState.page + 1,
-    }));
   };
 
   toggleModal = picture => {

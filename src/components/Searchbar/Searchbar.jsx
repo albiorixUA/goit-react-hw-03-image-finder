@@ -16,7 +16,6 @@ export default class SearchBar extends Component {
       return toast.error('Enter a search query');
     }
     this.props.onSubmit(this.state.pictureName);
-    this.setState({ pictureName: '' });
   };
 
   render() {

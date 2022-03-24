@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import s from './Searchbar.module.css';
 
 export default class SearchBar extends Component {
   state = {
@@ -20,14 +21,14 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <header class="searchbar">
+      <header className={s.Searchbar}>
         <Toaster />
-        <form onSubmit={this.handleSubmit} class="form">
-          <button type="submit" class="button">
-            <span class="button-label">Search</span>
+        <form onSubmit={this.handleSubmit} className={s.SearchForm}>
+          <button type="submit" className={s.SearchFormButton}>
+            <span className={s.SearchFormButtonLabel}>Search</span>
           </button>
           <input
-            class="input"
+            className={s.SearchFormInput}
             value={this.state.pictureName}
             onChange={this.handleSearchChange}
             type="text"

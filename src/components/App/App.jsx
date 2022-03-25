@@ -32,7 +32,7 @@ export default class App extends Component {
       this.loadPicture();
       this.resetData();
     }
-    if (nextPage !== prevPage) {
+    if (nextPage > prevPage) {
       this.loadPicture();
     }
     this.scrollToBottom();

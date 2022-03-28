@@ -102,7 +102,7 @@ export default class App extends Component {
       <div className={s.App}>
         <Searchbar onSubmit={this.handleFormSubmit} />
         {status === 'loading' && <LoaderSpiner />}
-        {status === 'loaded' && (
+        {pictureData.length > 0 && (
           <ImageGallery>
             <ImageGalleryItem
               pictureData={pictureData}
